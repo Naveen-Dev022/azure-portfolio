@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AppInsightsService } from '../../core/app-insights.service';
 import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -17,17 +18,13 @@ export class HomeComponent {
 
   downloadResume(): void {
     const fileUrl = environment.resumeLink;
-
-    this.http.get(fileUrl, { responseType: 'blob' }).subscribe((blob) => {
-      const downloadLink = document.createElement('a');
-      const objectUrl = URL.createObjectURL(blob);
-
-      downloadLink.href = objectUrl;
-      downloadLink.download = 'Naveen_Resume.pdf';
-      downloadLink.click();
-
-      URL.revokeObjectURL(objectUrl);
-      this.ai.logEvent('Resume Downloaded');
-    });
+    const link = document.createElement('a');
+    link.href = fileUrl; // your full Azure blob URL
+    link.download = 'Naveen_Resume.pdf';
+    link.target = '_blank'; // optional
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    this.ai.logEvent('Resume Downloaded');
   }
 }

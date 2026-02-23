@@ -6,6 +6,7 @@ import { AppInsightsService } from './core/app-insights.service';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent],
+  
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
