@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AppInsightsService } from './core/app-insights.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'azure-portfolio';
+  constructor(private appInsights: AppInsightsService) {}
 }
