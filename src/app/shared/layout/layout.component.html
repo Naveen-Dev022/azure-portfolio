@@ -1,0 +1,32 @@
+<div class="d-flex flex-column min-vh-100">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark bg-primary shadow custom-navbar"
+  >
+    <div class="container">
+      <a class="navbar-brand fw-bold" routerLink="/"> Portfolio </a>
+
+      <div>
+        <a class="nav-link d-inline text-white mx-2" routerLink="/about"
+          >About</a
+        >
+        <a class="nav-link d-inline text-white mx-2" routerLink="/projects"
+          >Projects</a
+        >
+        <a class="nav-link d-inline text-white mx-2" routerLink="/contact"
+          >Contact</a
+        >
+        <a class="nav-link d-inline text-white mx-2" routerLink="/experience"
+          >Experience</a
+        >
+      </div>
+    </div>
+  </nav>
+
+  <main class="content container mt-4">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer text-center">
+    © 2026 Naveen Shanmugam | Built with Angular & Azure
+  </footer>
+</div>

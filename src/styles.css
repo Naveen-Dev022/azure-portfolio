@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bs-primary: #6f42c1 !important;
+  --bs-primary-rgb: 111, 66, 193;
+
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+
+  --bs-btn-hover-bg: #5a32a3;
+  --bs-btn-hover-border-color: #5a32a3;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Navbar and Footer */
+.custom-navbar {
+  background: linear-gradient(180deg, #6a11cb, #cbd3e3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background: linear-gradient(-180deg, #869dcb, #6a11cb);
+  color: white;
+  padding: 15px;
+}
+
+/* Bootstrap buttons */
+.btn-primary {
+  background: linear-gradient(90deg, #6a11cb, #abc0e4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-secondary {
+  background: linear-gradient(90deg, #db5b0b, #2575fc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-light {
+  background: linear-gradient(60deg, #db5b0b, #e8e3e3c7);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation of buttons */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-light:hover {
+  background-size: 200% 120%;
+  animation: gradientFlow 3s ease infinite;
+}
+
+.custom-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ffc107 !important;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #a6b9dc, #deb0de);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

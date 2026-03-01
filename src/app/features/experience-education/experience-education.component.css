@@ -1,0 +1,147 @@
+.premium-timeline {
+  padding: 100px 20px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #4b2dbd, #6a11cb, #2575fc);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  color: white;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 70px;
+  font-weight: 600;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateX(-50%);
+  animation: pulseLine 3s infinite;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 50px;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.timeline-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.company {
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.duration {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Animations */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY();
+  }
+}
+
+@keyframes pulseLine {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mobile Responsive */
+
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 10px;
+  }
+}

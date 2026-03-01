@@ -1,3 +1,25 @@
-<p>home works!</p>
+<div class="text-center">
+  <h1 class="display-4">Hi, I'm Naveen 👋</h1>
+  <p class="lead">
+    .NET Full Stack Developer | Angular | Azure \ AWS Enthusiasts
+  </p>
 
-<button (click)="downloadResume()" class="btn">Download Resume</button>
+  <img
+    src="assets/profile.jpg"
+    class="rounded-circle shadow mt-3"
+    width="180"
+    alt="Profile"
+  />
+
+  <div class="mt-4">
+    <a routerLink="/projects" class="btn btn-primary mx-2">
+      View My Projects
+    </a>
+
+    <a (click)="downloadResume()" download class="btn btn-light mx-2">
+      Download Resume
+    </a>
+
+    <a routerLink="/contact" class="btn btn-secondary mx-2"> Contact Me </a>
+  </div>
+</div>

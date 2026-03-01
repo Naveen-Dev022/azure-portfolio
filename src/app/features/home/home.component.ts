@@ -2,20 +2,24 @@ import { Component } from '@angular/core';
 import { AppInsightsService } from '../../core/app-insights.service';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
   constructor(
-    private ai: AppInsightsService,
+    private appInsights: AppInsightsService,
     private http: HttpClient,
   ) {}
 
+  ngOnInit(): void {
+    this.appInsights.logPageView('Home Page');
+  }
   downloadResume(): void {
     const fileUrl = environment.resumeLink;
     const link = document.createElement('a');
@@ -25,6 +29,6 @@ export class HomeComponent {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    this.ai.logEvent('Resume Downloaded');
+    this.appInsights.logEvent('Resume Downloaded');
   }
 }
