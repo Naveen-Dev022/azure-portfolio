@@ -69,12 +69,5 @@ export class ExperienceEducationComponent {
       company: 'Kovai Systems India Private Limited, Chennai',
       duration: 'Dec 2019 – Jan 2022',
     },
-    {
-      type: 'education',
-      icon: '🎓',
-      title: 'Bachelor of Engineering',
-      company: 'Your University Name',
-      duration: 'Year – Year',
-    },
   ];
 }

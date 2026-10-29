@@ -9,6 +9,12 @@ export class ProjectService {
   getProjects(): Project[] {
     return [
       {
+        title: 'Engagement Management Framework',
+        description: 'Hosted on Azure Premises',
+        imageUrl: this.storageBaseUrl + 'portfolio.png',
+        githubUrl: 'https://github.com/yourrepo',
+      },
+      {
         title: 'Azure Portfolio',
         description: 'Hosted on Azure Static Web Apps',
         imageUrl: this.storageBaseUrl + 'portfolio.png',
