@@ -3,27 +3,27 @@ import { Project } from '../../models/project';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectService {
-  private storageBaseUrl =
-    'https://YOURSTORAGE.blob.core.windows.net/projects/';
+  private readonly storageBaseUrl =
+    'https://devfolio.blob.core.windows.net/assets/Images/';
 
   getProjects(): Project[] {
     return [
       {
-        title: 'Engagement Management Framework',
-        description: 'Hosted on Azure Premises',
-        imageUrl: this.storageBaseUrl + 'portfolio.png',
-        githubUrl: 'https://github.com/yourrepo',
+        title: 'EMF',
+        description: 'Hosted on Premises (CompanyProject)',
+        imageUrl: this.storageBaseUrl + 'emf.jpeg',
+        githubUrl: '',
       },
       {
         title: 'Azure Portfolio',
         description: 'Hosted on Azure Static Web Apps',
-        imageUrl: this.storageBaseUrl + 'portfolio.png',
-        githubUrl: 'https://github.com/yourrepo',
+        imageUrl: this.storageBaseUrl + 'portfolio.jpeg',
+        githubUrl: 'https://github.com/Naveen-Dev022/azure-portfolio',
       },
       {
         title: 'AI Interview App',
         description: 'Angular + Azure Functions',
-        imageUrl: this.storageBaseUrl + 'ai-app.png',
+        imageUrl: this.storageBaseUrl + 'ai interview.jpeg',
         githubUrl: 'https://github.com/yourrepo2',
       },
     ];

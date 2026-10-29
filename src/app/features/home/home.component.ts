@@ -16,12 +16,14 @@ export class HomeComponent {
     private appInsights: AppInsightsService,
     private http: HttpClient,
   ) {}
+  private readonly resumeUrl =
+    'https://devfolio.blob.core.windows.net/assets/Resume/Naveen_Shanmugam_Resume.pdf';
 
   ngOnInit(): void {
     this.appInsights.logPageView('Home Page');
   }
   downloadResume(): void {
-    const fileUrl = environment.resumeLink;
+    const fileUrl = this.resumeUrl;
     const link = document.createElement('a');
     link.href = fileUrl; // your full Azure blob URL
     link.download = 'Naveen_Resume.pdf';
